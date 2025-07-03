@@ -1,0 +1,2 @@
+# Everyday learning will be mentioned here
+# today revised few basic about activation fn, loss fn, optimizers, layers and tensors
