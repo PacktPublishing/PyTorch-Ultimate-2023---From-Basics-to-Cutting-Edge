@@ -1,6 +1,9 @@
 
 <b><p align='center'>[![Packt Sale](https://static.packt-cdn.com/assets/images/packt+events/Improve_UX.png)](https://packt.link/algotradingpython)</p></b> 
 
+
+<b><p align='center'>[![Packt Sale](https://static.packt-cdn.com/assets/images/packt+events/Improve_UX.png)](https://packt.link/algotradingpython)</p></b> 
+
 # PyTorch Ultimate 2024 - From Basics to Cutting-Edge
 PyTorch Ultimate 2024 - From Basics to Cutting-Edge, Published by Packt Publishing
 
