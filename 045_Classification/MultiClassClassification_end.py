@@ -46,13 +46,11 @@ class MultiClassNet(nn.Module):
         super().__init__()
         self.lin1 = nn.Linear(NUM_FEATURES, HIDDEN_FEATURES)
         self.lin2 = nn.Linear(HIDDEN_FEATURES, NUM_CLASSES)
-        self.log_softmax = nn.LogSoftmax(dim=1)
 
     def forward(self, x):
         x = self.lin1(x)
         x = torch.sigmoid(x)
         x = self.lin2(x)
-        x = self.log_softmax(x)
         return x
 
 # %% hyper parameters
@@ -76,10 +74,10 @@ for epoch in range(NUM_EPOCHS):
         optimizer.zero_grad()
 
         # forward pass
-        y_hat_log = model(x)
+        y_hat = model(x)
         
         # calculate losses
-        loss = criterion(y_hat_log, y)
+        loss = criterion(y_hat, y)
         
         # calculate gradients
         
@@ -95,7 +93,7 @@ sns.lineplot(x= range(len(losses)), y = losses)
 # %% test the model
 X_test_torch = torch.from_numpy(X_test)
 with torch.no_grad():
-    y_test_hat_softmax = model(X_test_torch)
+    y_test_hat_softmax = torch.softmax(model(X_test_torch), dim = 1)
     y_test_hat = torch.max(y_test_hat_softmax.data, 1)
 
 
